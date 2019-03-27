@@ -10,8 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-dialogue <-  c("小明說：'明天不用上課。'",
-               "小花說：'真的嗎？'")
+dialogue <-  c("撠?牧嚗?'??予銝銝玨??'",
+               "撠隤迎??'??????'")
 
 cat(dialogue, sep="\n")
 ```
@@ -23,7 +23,7 @@ class(aLogical)
 
 ```{r}
 studentMajors <- factor(
-  c("經濟系", "經濟系", "法律系")
+  c("蝬?頂", "蝬?頂", "瘜?頂")
 )
 ```
 
@@ -32,7 +32,7 @@ class (studentMajors)
 ```
 
 ```{r}
-studentMajors0 <- c("經濟系", "經濟系", "法律系")
+studentMajors0 <- c("蝬?頂", "蝬?頂", "瘜?頂")
 ```
 
 ```{r}
@@ -41,7 +41,7 @@ class (studentMajors0)
 
 ```{r}
 birthplace <- factor(
-  c("台北市", "台北市", "台中市", "台中市")
+  c("?????", "?????", "?銝剖??", "?銝剖??")
 )
 ```
 
@@ -55,12 +55,12 @@ as.integer(birthplace)
 
 ```{r}
 stringInteger <- c("1","2","-11")
-class(stringInteger) # 無法進行數值運算
+class(stringInteger) # ?瘜脰??潮???
 ```
 
 ```{r}
 trueInteger <- as.integer(stringInteger)
-class(trueInteger) # 可以進行數值運算
+class(trueInteger) # ?隞仿脰??潮???
 ```
 
 ```{r}
