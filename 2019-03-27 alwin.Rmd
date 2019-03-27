@@ -12,7 +12,11 @@ library(lubridate)
 ```
 
 ```{r}
-twdatetime<-ymd()("1970-01-01 00:02:53") 
+twdatetime<-ymd_hms("1970-01-01 00:02:53") 
+```
+
+```{r}
+as.integer(twdatetime)
 ```
 
 ```{r}
@@ -20,7 +24,7 @@ Sys.timezone()
 ```
 
 ```{r}
-twDateTime <-ymd_hms("2019-03-18 15:50:00", tz="Asia/Taipei")
+twDateTime<-ymd_hms("2019-03-18 15:50:00", tz="Asia/Taipei")
 ```
 
 ```{r}
@@ -28,8 +32,8 @@ LisbonDateTime <- with_tz(twDateTime,tzone="Europe/Lisbon")
 ```
 
 ```{r}
-as.double(LisbonDateTime)
-as.double(twDateTime)
+as.integer(LisbonDateTime)
+as.integer(twDateTime)
 ```
 
 ```{r}
@@ -44,6 +48,118 @@ LisbonDateTime <- with_tz(twdatetime1,tzone="Europe/Lisbon")
 as.integer(twdatetime1)
 as.integer(twDateTime)
 ```
+
+```{r}
+a <- c(1, 5, -3)
+b <- c(0.5, 12, 2)
+aL <- c(1L, 5L, -3L)
+bL <- c(-2L, -4L, 8L)
+```
+
+```{r}
+a*bL
+```
+
+```{r}
+class(a*bL)
+```
+
+```{r}
+twDateTime2 <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
+```
+
+```{r}
+twDateTime2+1
+```
+
+```{r}
+class(twDateTime2+1)
+```
+
+```{r}
+twdatatime3<- ymd("2019-08-11")
+twdatatime4<- ymd("2019-09-11")
+```
+
+```{r}
+twdatatime4-twdatatime3
+```
+
+```{r}
+as.integer(twdatatime4-twdatatime3)
+```
+ 
+```{r}
+twdatatime3+years(1)
+```
+
+```{r}
+x <- 5
+y <- 7
+x2 <- c(1,5,10)
+y2 <- c(-1,5,20)
+```
+
+```{r}
+x2>y2
+```
+
+```{r}
+x3 <- c(5,10)
+y3 <- c(5,8,10)
+```
+
+```{r}
+x3 %in% y3
+```
+
+```{r}
+x4 <- c("小明","小花")
+y4 <- c("小明","小華")
+```
+
+```{r}
+x4 %in% y4
+```
+
+```{r}
+x5 <- c("台北市","新北市","高雄市")
+y5 <- c("台北市","新北市")
+
+x5 %in% y5
+```
+
+```{r}
+x6 <- c(1,NA,10)
+y6 <- c(-1,NA,20)
+
+x7 <- c(NA,"小花")
+y7 <- c(NA,"小華")
+```
+
+```{r}
+x6*y6
+```
+
+```{r}
+x6 %in% y6
+```
+
+```{r}
+sum(x6, na.rm=T)
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
