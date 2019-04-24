@@ -1,0 +1,103 @@
+---
+title: '2019-04-24'
+author: "林茂廷"
+date: "4/24/2019"
+output: html_document
+---
+
+```{r}
+m2<-matrix(c("a","b","c","d"),2,2)
+class(m2)
+typeof(m2)
+a<-m2[[1]]
+b<-m2[[3]]
+cd<-m2[c(2,4)]
+a
+b
+cd
+```
+
+```{r}
+StuList <- list(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50)
+  )
+StuList 
+```
+
+```{r}
+StuDF <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50)
+  )
+StuDF 
+```
+
+```{r}
+StuDF[[2]][[3]]
+```
+
+
+```{r}
+class(StuDF$姓名)
+```
+
+```{r}
+StuDF$姓名 <- as.character(StuDF$姓名)
+class(StuDF$姓名)
+```
+
+```{r}
+StuDF2 <- data.frame(
+  學號=c(172,214,322,425,517),
+  姓名=c("小明","大雄","胖虎","小新","大白"),
+  成績=c(80,60,90,70,50),
+  stringsAsFactors = FALSE
+  )
+StuDF2 
+```
+
+```{r}
+class(StuList)
+as.data.frame(StuList) -> StuDF3
+
+class(StuDF3)
+StuDF3
+```
+
+```{r}
+as.data.frame(StuList,stringsAsFactors = F) -> StuDF4
+class(StuDF4)
+StuDF4
+```
+
+```{r}
+chosenLETTERS <- LETTERS[1:16]
+matObj1 <- matrix(chosenLETTERS,4,4)
+matObj1
+tolower(matObj1) # 轉成小寫
+toupper(matObj1) # 轉成大寫
+```
+
+```{r}
+matObj1
+matObj1[3,2] 
+matObj1[c(F,F,TRUE,F),c(F,TRUE,F,F)]
+```
+
+```{r}
+library(readr)
+classSurvey <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/classSurvey.csv")
+```
+
+```{r}
+c<-classSurvey[c("性別","本學期學分數")]
+d<-classSurvey[c(1:60),c(4,5)]
+```
+
+
+
+
+
