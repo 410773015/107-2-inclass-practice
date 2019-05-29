@@ -61,6 +61,49 @@ gpa_fun("92aS67fee")
 gpa_fun("aa829838s")
 ```
 
+```{r}
+supply_fun4 <- function(P,a,b){
+  Qs <- a+b*P
+  if(P < 0) {
+    message("P can not be negative") # 在螢幕出現的「錯誤」提示，沒有輸出任何值
+  } else if(P < -a/b) {
+    message("P must larger than",-a/b,"(-a/b)")
+  } else {
+    return(Qs)
+  }
+}
+supply_fun4(P=-1,-3,1)
+supply_fun4(P=2,-3,1)
+supply_fun4(P=3,-3,1)
+```
+
+
+```{r}
+6%%3
+```
+
+```{r}
+fizzbuzz<-function(a){
+  if(a%%3==0&a%%5!=0){
+    print("ok")
+  }
+  else if(a%%5==0&a%%3!=0){
+    print("kk")
+  }
+  else if(a%%5==0&a%%3==0){
+    print("ko")
+  }
+  else{
+    print("bad")
+  }
+}
+fizzbuzz(3)
+fizzbuzz(7)
+fizzbuzz(15)
+```
+
+
+
 
 
 
