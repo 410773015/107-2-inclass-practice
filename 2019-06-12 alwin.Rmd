@@ -67,6 +67,31 @@ for(i in seq_along(commitHistory)){
 }
 ```
 
+```{r}
+a <- vector("list",length(commitHistory))
+b <- vector("logical",length(commitHistory))
+for(i in seq_along(commitHistory)){
+  author_i <- commitHistory[[i]]$commit$author$name
+  committer_i <- commitHistory[[i]]$commit$committer$name
+  commitDate_i <- commitHistory[[i]]$commit$committer$date
+
+  (author_i == committer_i) -> b[[i]]
+
+  list(
+    author=author_i,
+    committer=committer_i,
+    commitDate=commitDate_i
+  ) -> a[[i]]  
+}
+a
+print(b)
+a[b] -> saveValidCommitDate
+saveValidCommitDate
+```
+
+
+
+
 
 
 
