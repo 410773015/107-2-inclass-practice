@@ -1,0 +1,76 @@
+---
+title: "2019/6/12"
+author: '410773015'
+date: "2019年6月12日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(stringr)
+gmailAddress <- c(
+  "tim@gmail.com",
+  "anita",
+  "yellen@gmail.com",
+  "huang@gmail.com"
+)
+cat("起始狀況\n")
+gmailAddress
+
+# for loop
+for(i in seq_along(gmailAddress)){
+  if(!str_detect(gmailAddress[[i]],"@gmail.com")){
+    correctGmailAddress <-
+      str_c(gmailAddress[[i]],"@gmail.com")
+    gmailAddress[[i]] <- correctGmailAddress
+  }
+}
+
+cat("修正後狀況\n")
+gmailAddress
+```
+
+```{r}
+load(url("https://www.dropbox.com/s/qnz9paigf61yjus/commitHistory.Rda?raw=1"))
+```
+
+```{r}
+library(stringr)
+for(i in seq_along(commitHistory)){print(commitHistory[[i]]$commit$author$name)
+                                   print(commitHistory[[i]]$commit$committer$name)
+                                   print(commitHistory[[i]]$commit$committer$date)}
+```
+
+```{r}
+library(stringr)
+for(i in seq_along(commitHistory)){print(str_c("Authur is"," ",commitHistory[[i]]$commit$author$name,",",
+                                   "Commiter is"," ",commitHistory[[i]]$commit$committer$name,",",
+                                   "Date is"," ",commitHistory[[i]]$commit$committer$date))}
+```
+
+```{r}
+for(i in seq_along(commitHistory)){
+  (commitHistory[[i]][["commit"]][["author"]][["name"]]==
+     commitHistory[[i]][["commit"]][["committer"]][["name"]]) ->
+    logiResult
+  print(logiResult)  
+}
+```
+
+```{r}
+for(i in seq_along(commitHistory)){
+  print((commitHistory[[i]][["commit"]][["author"]][["name"]]==
+     commitHistory[[i]][["commit"]][["committer"]][["name"]]))
+}
+```
+
+
+
+
+
+
+
+
